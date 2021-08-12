@@ -4,8 +4,8 @@ import java.util.concurrent.TimeUnit;
 
 public class Calendar {
 	
-	private static Calendar sElF;
-	private static java.util.Calendar cAlEnDaR;
+	private static Calendar self; 	//sElF has been changed to self 
+	private static java.util.Calendar calendar; //cALEndar has been changed into the calendar 
 	
 	
 	private Calendar() {
