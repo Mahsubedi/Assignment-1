@@ -17,35 +17,35 @@ import java.util.Map;
 @SuppressWarnings("serial")
 public class Library implements Serializable {
 	
-	private static final String lIbRaRyFiLe = "library.obj";
-	private static final int lOaNlImIt = 2;
-	private static final int loanPeriod = 2;
-	private static final double FiNe_PeR_DaY = 1.0;
-	private static final double maxFinesOwed = 1.0;
-	private static final double damageFee = 2.0;
+	private static final String Libraryfile  = "library.obj";	// lIbRaRyFiLe to Libraryfile 
+	private static final int Loanlimit = 2;		// lOaNlImIt to Loanlimit
+	private static final int LoanPeriod = 2;	// lOaN_PeRiod to LoanPeriod
+	private static final double Fineperday = 1.0;	//FiNe_PeR_DaY to Fineperday
+	private static final double Maxfinesowed = 1.0; //maxFinesOwed to Maxfinesowed
+	private static final double Damagefee = 2.0;	// damageFee to Damagefee
 	
 	private static Library SeLf;
-	private int bOoK_Id;
-	private int mEmBeR_Id;
-	private int lOaN_Id;
-	private Date lOaN_DaTe;
+	private int BookId;	//  bOoK_Id to BookId
+	private int MemberId ;	//  mEmBeR_Id to MemberId
+	private int loanId;	// lOaN_Id to loanId
+	private Date lOaN_DaTe; // loanDate
 	
-	private Map<Integer, Book> CaTaLoG;
-	private Map<Integer, Member> MeMbErS;
-	private Map<Integer, Loan> LoAnS;
-	private Map<Integer, Loan> CuRrEnT_LoAnS;
-	private Map<Integer, Book> DaMaGeD_BoOkS;
+	private Map<Integer, Book> CaTaLoG;	// CaTaLoG to Catalog
+	private Map<Integer, Member> MeMbErS;	// MeMbErS to Members
+	private Map<Integer, Loan> LoAnS;	// LoAnS to Loans
+	private Map<Integer, Loan> CurrentLoans;	// CuRrEnT_LoAnS to CurrentLoans
+	private Map<Integer, Book> DamagedBooks;	// DaMaGeD_BoOkS to DamagedBooks
 	
 
 	private Library() {
-		CaTaLoG = new HashMap<>();
-		MeMbErS = new HashMap<>();
-		LoAnS = new HashMap<>();
-		CuRrEnT_LoAnS = new HashMap<>();
-		DaMaGeD_BoOkS = new HashMap<>();
-		bOoK_Id = 1;
-		mEmBeR_Id = 1;		
-		lOaN_Id = 1;		
+		Catalog = new HashMap<>(); 	// CaTaLoG to Catalog
+		Members = new HashMap<>(); 	//MeMbErS to Members
+		Loans = new HashMap<>(); 	//LoAnS to Loans
+		CurrentLoans = new HashMap<>(); 	// CuRrEnT_LoAnS to CurrentLoans
+		DamagedBooks = new HashMap<>();	// DaMaGeD_BoOkS to DamagedBooks
+		BookId = 1;	//  bOoK_Id to BookId
+		MemberId = 1;  //  mEmBeR_Id to MemberId	
+		loanId = 1;	// lOaN_Id to loanId	
 	}
 
 	
