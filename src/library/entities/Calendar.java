@@ -11,18 +11,19 @@ public class Calendar {
 	private Calendar() {
 		cAlEnDaR = java.util.Calendar.getInstance();
 	}
-	
-	public static Calendar instance() {
+	//Changed gEtInStAnCe to getInstance
+	public static Calendar getInstance() {
 		if (sElF == null) {
 			sElF = new Calendar();
 		}
 		return sElF;
 	}
-	
+
 	public void incrementDate(int days) {
 		cAlEnDaR.add(java.util.Calendar.DATE, days);		
 	}
 	
+	// Changed SeT_DaTe to setDate
 	public synchronized void setDate(Date DaTe) {
 		try {
 			cAlEnDaR.setTime(DaTe);
@@ -35,7 +36,9 @@ public class Calendar {
 			throw new RuntimeException(e);
 		}	
 	}
-	public synchronized Date date() {
+	
+	//Changed gEt_DaTe to getDate
+	public synchronized Date getDate() {
 		try {
 	        cAlEnDaR.set(java.util.Calendar.HOUR_OF_DAY, 0);  
 	        cAlEnDaR.set(java.util.Calendar.MINUTE, 0);  
@@ -48,7 +51,8 @@ public class Calendar {
 		}	
 	}
 
-	public synchronized Date dueDate(int loanPeriod) {
+	// Changed gEt_DuE_DaTe to getDueDate
+	public synchronized Date getDueDate(int loanPeriod) {
 		Date nOw = gEt_DaTe();
 		cAlEnDaR.add(java.util.Calendar.DATE, loanPeriod);
 		Date dUeDaTe = cAlEnDaR.getTime();
@@ -56,6 +60,7 @@ public class Calendar {
 		return dUeDaTe;
 	}
 	
+	//Changed GeT_DaYs_DiFfErEnCe to getDaysDifference
 	public synchronized long getDaysDifference(Date targetDate) {
 		
 		long Diff_Millis = gEt_DaTe().getTime() - targetDate.getTime();
