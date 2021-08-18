@@ -50,7 +50,7 @@ public class Library implements Serializable {
 
 	
 	public static synchronized Library GeTiNsTaNcE() {		
-		if (SeLf == null) {
+		if (SeLf == null) {				
 			Path PATH = Paths.get(lIbRaRyFiLe);			
 			if (Files.exists(PATH)) {	
 				try (ObjectInputStream LiBrArY_FiLe = new ObjectInputStream(new FileInputStream(lIbRaRyFiLe));) {
