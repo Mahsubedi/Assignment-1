@@ -49,9 +49,9 @@ public class Library implements Serializable {
 	}
 
 	
-	public static synchronized Library Getinstance() {	// GeTiNsTaNcE to Getinstance	
-		if (Self == null) {				//SeLf to Self
-			Path PATH = Paths.get(LibraryFile);	// PATH to Path & lIbRaRyFiLe to LibraryFile		
+	public static synchronized Library GeTiNsTaNcE() {		
+		if (SeLf == null) {				
+			Path PATH = Paths.get(lIbRaRyFiLe);			
 			if (Files.exists(PATH)) {	
 				try (ObjectInputStream LiBrArY_FiLe = new ObjectInputStream(new FileInputStream(lIbRaRyFiLe));) {
 			    
