@@ -5,21 +5,21 @@ import java.io.Serializable;
 @SuppressWarnings("serial")
 public class Book implements Serializable {
 	
-	private String tItLe;
-	private String AuThOr;
-	private String CALLNO;
-	private int iD;
+	private String title; // changed tItLe into title
+	private String author; // changed AuThOr into author
+	private String callNo; // changed CALLNO into callNo
+	private int id;        //  changed iD into id
 	
 	private enum sTaTe { AVAILABLE, ON_LOAN, DAMAGED, RESERVED };
-	private sTaTe StAtE;
+	private sTaTe state; //StAtE into state
 	
 	
 	public Book(String author, String title, String callNo, int id) {
-		this.AuThOr = author;
-		this.tItLe = title;
-		this.CALLNO = callNo;
-		this.iD = id;
-		this.StAtE = sTaTe.AVAILABLE;
+		this.author = author; // changed AuThOr into author
+		this.title = title;    //changed tItLe into title
+		this.callNo = callNo;   //changed CALLNO into callNo
+		this.id = id;           //changed iD into id
+		this.state = sTaTe.AVAILABLE;  //changed StAtE into state  
 	}
 	
 	public String toString() {
@@ -33,34 +33,34 @@ public class Book implements Serializable {
 		return sb.toString();
 	}
 
-	public Integer gEtId() {
-		return iD;
+	public Integer getId() { //changed gEtId into getId
+		return id;        //iD into id
 	}
 
-	public String gEtTiTlE() {
-		return tItLe;
+	public String getTitle() { //changed gEtTiTlE into getTitle
+		return title;       //changed tItLe into title
 	}
 
 
 	
-	public boolean iS_AvAiLaBlE() {
-		return StAtE == sTaTe.AVAILABLE;
+	public boolean isAvailable() { // changed iS_AvAiLaBlE into isAvailable
+		return state == sTaTe.AVAILABLE; //StAtE into state
 	}
 
 	
-	public boolean iS_On_LoAn() {
-		return StAtE == sTaTe.ON_LOAN;
+	public boolean isOnLoan() { //changed iS_On_LoAn into isOnLoan
+		return state == sTaTe.ON_LOAN; //StAtE into state
 	}
 
 	
-	public boolean iS_DaMaGeD() {
-		return StAtE == sTaTe.DAMAGED;
+	public boolean isDamaged() {//changed iS_DaMaGeD into isDamaged
+		return state == sTaTe.DAMAGED;  //StAtE into state
 	}
 
-	
-	public void BoRrOw() {
+	//changed BoRrOw into Borrow
+	public void Borrow() {
 		if (StAtE.equals(sTaTe.AVAILABLE)) 
-			StAtE = sTaTe.ON_LOAN;
+			state = sTaTe.ON_LOAN; //StAtE into state
 		
 		else 
 			throw new RuntimeException(String.format("Book: cannot borrow while book is in state: %s", StAtE));
@@ -68,8 +68,8 @@ public class Book implements Serializable {
 		
 	}
 
-
-	public void ReTuRn(boolean DaMaGeD) {
+         //changed ReTuRn into Return
+	public void Return(boolean DaMaGeD) {
 		if (StAtE.equals(sTaTe.ON_LOAN)) 
 			if (DaMaGeD) 
 				StAtE = sTaTe.DAMAGED;
@@ -83,7 +83,7 @@ public class Book implements Serializable {
 				
 	}
 
-	
+	//changed RePaIr into Repair
 	public void RePaIr() {
 		if (StAtE.equals(sTaTe.DAMAGED)) 
 			StAtE = sTaTe.AVAILABLE;
