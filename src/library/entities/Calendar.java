@@ -9,28 +9,30 @@ public class Calendar {
 	
 	
 	private Calendar() {
-		cAlEnDaR = java.util.Calendar.getInstance();
+		calendar = java.util.Calendar.getInstance(); //cALEndar has been changed into the calendar 
 	}
 	//Changed gEtInStAnCe to getInstance
+	//Changed sELF to self 
 	public static Calendar getInstance() {
-		if (sElF == null) {
-			sElF = new Calendar();
+		if (self == null) {
+			self = new Calendar();
 		}
-		return sElF;
+		return self;
 	}
-
+	//cALEndar has been changed into the calendar 
 	public void incrementDate(int days) {
-		cAlEnDaR.add(java.util.Calendar.DATE, days);		
+		calendar.add(java.util.Calendar.DATE, days);		
 	}
 	
 	// Changed SeT_DaTe to setDate
+	//cALEndar has been changed into the calendar
 	public synchronized void setDate(Date DaTe) {
 		try {
-			cAlEnDaR.setTime(DaTe);
-	        cAlEnDaR.set(java.util.Calendar.HOUR_OF_DAY, 0);  
-	        cAlEnDaR.set(java.util.Calendar.MINUTE, 0);  
-	        cAlEnDaR.set(java.util.Calendar.SECOND, 0);  
-	        cAlEnDaR.set(java.util.Calendar.MILLISECOND, 0);
+			calendar.setTime(DaTe);
+	        calendar.set(java.util.Calendar.HOUR_OF_DAY, 0);  
+	        calendar.set(java.util.Calendar.MINUTE, 0);  
+	        calendar.set(java.util.Calendar.SECOND, 0);  
+	        calendar.set(java.util.Calendar.MILLISECOND, 0);
 		}
 		catch (Exception e) {
 			throw new RuntimeException(e);
@@ -38,13 +40,15 @@ public class Calendar {
 	}
 	
 	//Changed gEt_DaTe to getDate
+	//cALEndar has been changed into the calendar
+
 	public synchronized Date getDate() {
 		try {
-	        cAlEnDaR.set(java.util.Calendar.HOUR_OF_DAY, 0);  
-	        cAlEnDaR.set(java.util.Calendar.MINUTE, 0);  
-	        cAlEnDaR.set(java.util.Calendar.SECOND, 0);  
-	        cAlEnDaR.set(java.util.Calendar.MILLISECOND, 0);
-			return cAlEnDaR.getTime();
+	        calendar.set(java.util.Calendar.HOUR_OF_DAY, 0);  
+	        calendar.set(java.util.Calendar.MINUTE, 0);  
+	        calendar.set(java.util.Calendar.SECOND, 0);  
+	        calendar.set(java.util.Calendar.MILLISECOND, 0);
+			return calendar.getTime();
 		}
 		catch (Exception e) {
 			throw new RuntimeException(e);
@@ -52,11 +56,12 @@ public class Calendar {
 	}
 
 	// Changed gEt_DuE_DaTe to getDueDate
+	//cALEndar has been changed into the calendar
 	public synchronized Date getDueDate(int loanPeriod) {
 		Date nOw = gEt_DaTe();
-		cAlEnDaR.add(java.util.Calendar.DATE, loanPeriod);
-		Date dUeDaTe = cAlEnDaR.getTime();
-		cAlEnDaR.setTime(nOw);
+		calendar.add(java.util.Calendar.DATE, loanPeriod);
+		Date dUeDaTe = calendar.getTime();
+		calendar.setTime(nOw);
 		return dUeDaTe;
 	}
 	
