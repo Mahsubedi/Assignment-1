@@ -49,23 +49,23 @@ public class Library implements Serializable {
 	}
 
 	
-	public static synchronized Library GeTiNsTaNcE() {		
-		if (SeLf == null) {				
-			Path PATH = Paths.get(lIbRaRyFiLe);			
+	public static synchronized Library GetInstance() {	// GeTiNsTaNcE to GetInstance	
+		if (Self == null) {				// SeLf to Self		
+			Path PATH = Paths.get(LibraryFile);	// lIbRaRyFiLe to LibraryFile		
 			if (Files.exists(PATH)) {	
-				try (ObjectInputStream LiBrArY_FiLe = new ObjectInputStream(new FileInputStream(lIbRaRyFiLe));) {
+				try (ObjectInputStreamLibraryFile = new ObjectInputStream(new FileInputStream(LibraryFile));) {  // LiBrArY_FiLe to LibraryFile
 			    
-					SeLf = (Library) LiBrArY_FiLe.readObject();
-					Calendar.gEtInStAnCe().SeT_DaTe(SeLf.lOaN_DaTe);
-					LiBrArY_FiLe.close();
+					Self = (Library) LibraryFile.readObject();		// LiBrArY_FiLe to LibraryFile & SeLf to Self
+					Calendar.gEtInStAnCe().SeT_DaTe(SeLf.lOaN_DaTe);	// gEtInStAnCe to GetInstance & SeT_DaTe to SetDate & SeLf to Self & SeLf.lOaN_DaTe to Self.LoanDate.
+					LiBrArY_FiLe.close();					// LiBrArY_FiLe to LibraryFile
 				}
 				catch (Exception e) {
 					throw new RuntimeException(e);
 				}
 			}
-			else SeLf = new Library();
+			else Self = new Library();	//SeLf to Self
 		}
-		return SeLf;
+		return Self;				//SeLf to Self
 	}
 
 	
