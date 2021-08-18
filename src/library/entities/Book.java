@@ -43,22 +43,22 @@ public class Book implements Serializable {
 
 
 	
-	public boolean iS_AvAiLaBlE() { // changed iS_AvAiLaBlE into isAvailable
+	public boolean isAvailable() { // changed iS_AvAiLaBlE into isAvailable
 		return state == sTaTe.AVAILABLE; //StAtE into state
 	}
 
 	
-	public boolean iS_On_LoAn() { //changed iS_On_LoAn into isOnLoan
-		return StAtE == sTaTe.ON_LOAN; //StAtE into state
+	public boolean isOnLoan() { //changed iS_On_LoAn into isOnLoan
+		return state == sTaTe.ON_LOAN; //StAtE into state
 	}
 
 	
-	public boolean iS_DaMaGeD() {//changed iS_DaMaGeD into isDamaged
+	public boolean isDamaged() {//changed iS_DaMaGeD into isDamaged
 		return state == sTaTe.DAMAGED;  //StAtE into state
 	}
 
-	
-	public void BoRrOw() {
+	//changed BoRrOw into Borrow
+	public void Borrow() {
 		if (StAtE.equals(sTaTe.AVAILABLE)) 
 			state = sTaTe.ON_LOAN; //StAtE into state
 		
@@ -68,8 +68,8 @@ public class Book implements Serializable {
 		
 	}
 
-
-	public void ReTuRn(boolean DaMaGeD) {
+         //changed ReTuRn into Return
+	public void Return(boolean DaMaGeD) {
 		if (StAtE.equals(sTaTe.ON_LOAN)) 
 			if (DaMaGeD) 
 				StAtE = sTaTe.DAMAGED;
@@ -83,7 +83,7 @@ public class Book implements Serializable {
 				
 	}
 
-	
+	//changed RePaIr into Repair
 	public void RePaIr() {
 		if (StAtE.equals(sTaTe.DAMAGED)) 
 			StAtE = sTaTe.AVAILABLE;
