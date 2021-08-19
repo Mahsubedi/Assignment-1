@@ -70,7 +70,7 @@ public class Book implements Serializable {
 
          //changed ReTuRn into Return
 	public void Return(boolean DaMaGeD) {
-		if (StAtE.equals(sTaTe.ON_LOAN)) 
+		if (StAtE.equals(sTaTe.ON_LOAN)) //StAtE has changed into state
 			if (DaMaGeD) 
 				StAtE = sTaTe.DAMAGED;
 			
