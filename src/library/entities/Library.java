@@ -70,8 +70,8 @@ public class Library implements Serializable {
 
 	
 	public static synchronized void SaVe() {
-		if (SeLf != null) {
-			SeLf.lOaN_DaTe = Calendar.gEtInStAnCe().gEt_DaTe();
+		if (Self != null) {	//SeLf to Self
+			SeLf.lOaN_DaTe = Calendar.gEtInStAnCe().gEt_DaTe(); 	// SeLf.lOaN_DaTe to SelfLoanDate & gEtInStAnCe to GetInstance & gEt_DaTe to GetDate
 			try (ObjectOutputStream LiBrArY_fIlE = new ObjectOutputStream(new FileOutputStream(lIbRaRyFiLe));) {
 				LiBrArY_fIlE.writeObject(SeLf);
 				LiBrArY_fIlE.flush();
