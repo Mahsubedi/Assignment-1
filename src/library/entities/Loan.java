@@ -4,15 +4,15 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @SuppressWarnings("serial")
-public class Loan implements Serializable {
+public class LoanState implements Serializable {
 	
-	public static enum lOaN_sTaTe { CURRENT, OVER_DUE, DISCHARGED };
+	public static enum loan_State { CURRENT, OVER_DUE, DISCHARGED };
 	
 	private int LoAn_Id;
-	private Book BoOk;
+	private Book Book;
 	private Member MeMbEr;
 	private Date DaTe;
-	private lOaN_sTaTe StAtE;
+	private loan_State StAtE;
 
 	
 	public Loan(int loanId, Book bOoK, Member mEmBeR, Date DuE_dAtE) {
