@@ -58,19 +58,19 @@ public class Calendar {
 	// Changed gEt_DuE_DaTe to getDueDate
 	//cALEndar has been changed into the calendar
 	public synchronized Date getDueDate(int loanPeriod) {
-		Date nOw = getDaTe(); //gEt_DaTe has been changed to getDate
+		Date now = getDaTe(); //gEt_DaTe has been changed to getDate, nOw has been changed to now
 		calendar.add(java.util.Calendar.DATE, loanPeriod);
 		Date DueDaTe = calendar.getTime(); //dUeDate has been changed to DueDate 
-		calendar.setTime(nOw);
+		calendar.setTime(now);
 		return DueDate;
 	}
 	
 	//Changed GeT_DaYs_DiFfErEnCe to getDaysDifference
 	public synchronized long getDaysDifference(Date targetDate) {
-		
-		long Diff_Millis = gEt_DaTe().getTime() - targetDate.getTime();
+	
+		long Diff_Millis = getDaTe().getTime() - targetDate.getTime(); //gEt_Date has been changed to getDate 
 	    long Diff_Days = TimeUnit.DAYS.convert(Diff_Millis, TimeUnit.MILLISECONDS);
 	    return Diff_Days;
-	}
+	} 
 
 }
